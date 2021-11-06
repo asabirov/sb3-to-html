@@ -41,6 +41,7 @@ import * as puppeteer from "puppeteer";
 
   // debugger
   // await page.screenshot({ path: "example.png" });
+  await page.waitForTimeout(1000);
 
   await browser.close();
 })();
