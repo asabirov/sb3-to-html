@@ -1,0 +1,24 @@
+{
+  "name": "sb3-to-html",
+  "version": "1.0.0",
+  "description": "Headless converter sb3 (Scratch v.3) to HTML",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asabirov/sb3-to-html.git"
+  },
+  "author": "Artur Sabirov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asabirov/sb3-to-html/issues"
+  },
+  "homepage": "https://github.com/asabirov/sb3-to-html#readme",
+  "dependencies": {
+    "@types/node": "^16.11.6",
+    "prettier": "^2.4.1",
+    "puppeteer": "^11.0.0",
+    "puppeteer-tsd": "^0.0.2"
+  }
+}

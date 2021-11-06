@@ -1,2 +1,12 @@
-# sb3-to-html
-Headless converter sb3 (Scratch v.3) to HTML
+# Headless converter sb3 (Scratch v.3) to HTML
+
+## How to use
+
+    npm install
+    npm i -g ts-node
+    ts-node src/convert.ts examples/example_1.sb3 output/
+
+## Updating turbowarp
+
+    bash /bin/download_turbowarp.sh 0.2.0
+
