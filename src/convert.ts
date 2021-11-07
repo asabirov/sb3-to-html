@@ -6,7 +6,9 @@ import * as puppeteer from "puppeteer";
   const [projectFile, outputPath] = myArgs;
 
   // init puppeter
-  const browser = await puppeteer.launch({ headless: true });
+  const browserOpts = { headless: true };
+  //const browserOpts = { devtools: true };
+  const browser = await puppeteer.launch(browserOpts);
   const page = await browser.newPage();
 
   await page.client().send("Page.setDownloadBehavior", {
@@ -39,20 +41,14 @@ import * as puppeteer from "puppeteer";
 
   // enable controls
 
-  const options = [
-    "Show green",
-    "Show stop",
-    "Show fullscreen button",
-    "Support USB",
-  ];
+  const [el1] = await page.$x(`//label[contains(., 'Show green')]`);
+  await el1.click();
 
-  await Promise.all(
-    options.map(async (label) => {
-      console.log("Clicking ", label);
-      const [element] = await page.$x(`//*[contains(., '${label}')]`);
-      await element.click();
-    })
-  );
+  const [el2] = await page.$x(`//label[contains(., 'Show stop')]`);
+  await el2.click();
+
+  const [el3] = await page.$x(`//label[contains(., 'Support USB')]`);
+  await el3.click();
 
   // submit
   console.log("Submitting");
@@ -60,7 +56,7 @@ import * as puppeteer from "puppeteer";
   await submit.click();
 
   // debugger
-  // await page.screenshot({ path: "example.png" });
+  await page.screenshot({ path: "example.png" });
   console.log("Waiting for file");
   await page.waitForTimeout(1000);
 
