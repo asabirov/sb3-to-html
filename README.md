@@ -4,7 +4,7 @@
 
     npm install
     npm i -g ts-node
-    bin/convert examples/example_1.sb3 output/
+    bin/sb3-to-html examples/example_1.sb3 output/
 
 ## Updating turbowarp
 
