@@ -6,7 +6,7 @@ import * as puppeteer from "puppeteer";
   const [projectFile, outputPath] = myArgs;
 
   // init puppeter
-  const browserOpts = { headless: true };
+  const browserOpts = { headless: true, args: ["--no-sandbox"] };
   //const browserOpts = { devtools: true };
   const browser = await puppeteer.launch(browserOpts);
   const page = await browser.newPage();
