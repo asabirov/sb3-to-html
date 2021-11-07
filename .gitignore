@@ -2,3 +2,4 @@
 output
 examples
 node_modules
+src/convert.js
