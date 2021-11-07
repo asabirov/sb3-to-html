@@ -41,6 +41,11 @@ import * as puppeteer from "puppeteer";
 
   // enable controls
 
+  const [el0] = await page.$x(
+    `//label[contains(., 'Start project automatically')]`
+  );
+  await el0.click();
+
   const [el1] = await page.$x(`//label[contains(., 'Show green')]`);
   await el1.click();
 
