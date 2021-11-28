@@ -1,2 +1,5 @@
+#!/bin/bash
+
+cmd="{$TS_NODE:-ts-node}"
 root=$(dirname "$0")
-ts-node "${root}/../src/convert.ts" "$1" "$2"
+$cmd "${root}/../src/convert.ts" "$1" "$2"
